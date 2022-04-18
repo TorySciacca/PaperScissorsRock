@@ -6,6 +6,12 @@ let playerScore = 0;
 let computerScore = 0;
 let bestTo;
 
+//Allows the game to reset upon completion
+function resetGame(){
+    playerScore = 0;
+    computerScore = 0;
+}
+
 //Function to generate the computers logic. At random choses between paper, scissors or rock
 function computerPlay(){
     
@@ -60,10 +66,12 @@ function game(){
         if (playerScore >= bestTo){
             console.log("GAME OVER, YOU WIN!")
             console.log(`FINAL SCORE: You: ${playerScore}, Computer: ${computerScore}`)
+            resetGame()
             break
         } else if (computerScore >= bestTo) {
             console.log("GAME OVER, YOU LOSE!")
             console.log(`FINAL SCORE: You: ${playerScore}, Computer: ${computerScore}`)
+            resetGame()
             break
         } else {        
             let playerSelection = prompt("Paper, Scissors or Rock?");
